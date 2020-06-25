@@ -1,0 +1,38 @@
+//= templates/header.html
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-xl-5">
+                <h1>Войдите на сайт</h1>
+                <div class="subtitle">Введите email и пароль, указанный при регистрации</div>
+                <form class="form needs-validation" novalidate>
+                    <div class="form-group">
+                        <input type="text" id="email" class="form-control custom-control" placeholder="email" required>
+                        <label for="email" class="custom-label"><i class="las la-envelope"></i>Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" class="form-control custom-control" placeholder="password" required>
+                        <label for="password" class="custom-label"><i class="las la-lock"></i>Пароль</label>
+                    </div>
+                    <div class="form-group form-check">
+                        <input class="custom-check" type="checkbox" id="check" required>
+                        <label class="custom-check-label label-small" for="check">Запомнить меня</label>
+                        <a href="#" class="form-help">Забыли пароль?</a>
+                    </div>
+                    <button type="submit" class="btn btn-filled">Войти на сайт</button>
+                </form>
+                <div class="login-social-text">ИЛИ ВОЙДИТЕ С ПОМОЩЬЮ:</div>
+                <div class="login-social">
+                    <a href="#" class="social-link"><img src="assets/images/square-facebook.svg"></a>
+                    <a href="#" class="social-link"><img src="assets/images/square-google.svg"></a>
+                    <a href="#" class="social-link"><img src="assets/images/square-linkedin.svg"></a>
+                    <a href="#" class="social-link"><img src="assets/images/square-vk.svg"></a>
+                </div>
+                <div class="login-text">
+                    У вас нет аккаунта? <a href="register.html" class="login-link">Зарегистрируйтесь</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+//= templates/footer.html

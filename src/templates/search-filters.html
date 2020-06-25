@@ -1,0 +1,141 @@
+<form class="search-form">
+    <input type="text" class="form-control search-input" placeholder="Поиск вакансии по ключевым словам ">
+    <button type="submit" class="btn-search"></button>
+</form>
+<a href="#filter" class="btn btn-filled btn-filter" type="button" data-toggle="modal" data-target="#filter">фильтры поиска</a>
+<!--Modal-->
+<div class="modal fade" id="filter" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            <div class="container">
+                <div class="filter-top">
+                    <h2>Фильтры</h2>
+                    <a href="#" class="filter-reset">Очистить все</a>
+                </div>
+                <form>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="filterGroup1" data-toggle="collapse" data-target="#collapse-fg1" aria-expanded="false" aria-controls="collapse-fg1">
+                                <div class="accordion-title">Функция</div>
+                                <div class="accordion-icon"></div>
+                            </div>
+                            <div class="accordion-body collapse" id="collapse-fg1" aria-labelledby="fg1">
+                                <div class="filter-group">
+                                    <input type="checkbox" class="custom-check" id="function1">
+                                    <label class="filter-label" for="function1">Внутрикорпоративный юрист</label>
+                                </div>
+                                <div class="filter-group">
+                                    <input type="checkbox" class="custom-check" id="function2">
+                                    <label class="filter-label" for="function2">Юридическая фирма</label>
+                                </div>
+                                <div class="filter-group">
+                                    <input type="checkbox" class="custom-check" id="function3">
+                                    <label class="filter-label" for="function3">Адвокат</label>
+                                </div>
+                                <div class="filter-group">
+                                    <input type="checkbox" class="custom-check" id="function4">
+                                    <label class="filter-label" for="function4">Бэк-офис юр. функции</label>
+                                </div>
+                                <div class="filter-group">
+                                    <input type="checkbox" class="custom-check" id="function5">
+                                    <label class="filter-label" for="function5">Другое</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="filterGroup2" data-toggle="collapse" data-target="#collapse-fg2" aria-expanded="false" aria-controls="collapse-fg2">
+                                <div class="accordion-title">Уровень</div>
+                                <div class="accordion-icon"></div>
+                            </div>
+                            <div class="accordion-body collapse" id="collapse-fg2" aria-labelledby="fg2">
+                                <div class="filter-group">
+                                    <input type="checkbox" class="custom-check" id="level1">
+                                    <label class="filter-label" for="level1">Юрист высшего звена</label>
+                                </div>
+                                <div class="filter-group">
+                                    <input type="checkbox" class="custom-check" id="level2">
+                                    <label class="filter-label" for="level2">Юрист высшего звена</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="filterGroup3" data-toggle="collapse" data-target="#collapse-fg3" aria-expanded="false" aria-controls="collapse-fg3">
+                                <div class="accordion-title">Специализация</div>
+                                <div class="accordion-icon"></div>
+                            </div>
+                            <div class="accordion-body collapse" id="collapse-fg3" aria-labelledby="fg3">
+                                <div class="filter-group">
+                                    <input type="checkbox" class="custom-check" id="spec1">
+                                    <label class="filter-label" for="spec1">Арбитраж</label>
+                                </div>
+                                <div class="filter-group">
+                                    <input type="checkbox" class="custom-check" id="spec2">
+                                    <label class="filter-label" for="spec2">Банковское право</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="filterGroup4" data-toggle="collapse" data-target="#collapse-fg4" aria-expanded="false" aria-controls="collapse-fg4">
+                                <div class="accordion-title">Опыт работы</div>
+                                <div class="accordion-icon"></div>
+                            </div>
+                            <div class="accordion-body collapse" id="collapse-fg4" aria-labelledby="fg4">
+                                <div class="filter-group">
+                                    <input type="checkbox" class="custom-check" id="exp1">
+                                    <label class="filter-label" for="exp1">Менее 3х лет</label>
+                                </div>
+                                <div class="filter-group">
+                                    <input type="checkbox" class="custom-check" id="exp2">
+                                    <label class="filter-label" for="exp2">Более 3х лет</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="filterGroup5" data-toggle="collapse" data-target="#collapse-fg5" aria-expanded="false" aria-controls="collapse-fg5">
+                                <div class="accordion-title">Индустрия</div>
+                                <div class="accordion-icon"></div>
+                            </div>
+                            <div class="accordion-body collapse" id="collapse-fg5" aria-labelledby="fg5">
+                                <div class="filter-group">
+                                    <input type="checkbox" class="custom-check" id="ind1">
+                                    <label class="filter-label" for="ind1">Автомобильный бизнес</label>
+                                </div>
+                                <div class="filter-group">
+                                    <input type="checkbox" class="custom-check" id="ind2">
+                                    <label class="filter-label" for="ind2">Инвестиционный бизнес</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="filterGroup6" data-toggle="collapse" data-target="#collapse-fg6" aria-expanded="false" aria-controls="collapse-fg6">
+                                <div class="accordion-title">Занятость</div>
+                                <div class="accordion-icon"></div>
+                            </div>
+                            <div class="accordion-body collapse" id="collapse-fg6" aria-labelledby="fg6">
+                                <div class="filter-group">
+                                    <input type="checkbox" class="custom-check" id="emp1">
+                                    <label class="filter-label" for="emp1">Полный день</label>
+                                </div>
+                                <div class="filter-group">
+                                    <input type="checkbox" class="custom-check" id="emp2">
+                                    <label class="filter-label" for="emp2">Частичная занятость</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="filterGroup7" data-toggle="collapse" data-target="#collapse-fg7" aria-expanded="false" aria-controls="collapse-fg7">
+                                <div class="accordion-title">Уровень з/п</div>
+                                <div class="accordion-icon"></div>
+                            </div>
+                            <div class="accordion-body collapse" id="collapse-fg7" aria-labelledby="fg7">
+                                <input type="text" class="js-range-slider" name="range" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-filled btn-filter-submit" type="submit">применить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

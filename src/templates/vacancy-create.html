@@ -1,0 +1,133 @@
+<form class="needs-validation" novalidate>
+    <div class="subsection">
+        <h2>Опубликовать вакансию</h2>
+        <div class="switch">
+            <input class="switch-btn" type="radio" id="individual" name="type" value="personal" checked>
+            <label class="switch-label" for="individual">Как человек</label>
+            <input class="switch-btn" type="radio" id="entity" name="type" value="company">
+            <label class="switch-label" for="entity">как компания</label>
+        </div>
+        <div class="form-group">
+            <label for="company" class="label-normal">Компания</label>
+            <select id="company">
+                <option>Выберите компанию</option>
+                <option>Компания 1</option>
+                <option>Компания 2</option>
+            </select>
+        </div>
+        <div class="form-add">+ Создать компанию</div>
+    </div>
+    <div class="subsection">
+        <h3>Общая информация</h3>
+        <div class="form-group">
+            <label for="vacancy" class="label-normal">Название</label>
+            <input type="text" id="vacancy" class="form-control" placeholder="Название вакансии" required>
+        </div>
+        <div class="label-normal">Занятость</div>
+        <div class="form-group form-check">
+            <input type="radio" id="empl1" name="empl" class="custom-radio">
+            <label class="radio-label" for="empl1">Полный день</label>
+        </div>
+        <div class="form-group form-check">
+            <input type="radio" id="empl2" name="empl" class="custom-radio">
+            <label class="radio-label" for="empl2">Частичная занятость</label>
+        </div>
+        <div class="form-group form-check">
+            <input type="radio" id="empl3" name="empl" class="custom-radio">
+            <label class="radio-label" for="empl3">Удаленно</label>
+        </div>
+        <div class="form-group form-check">
+            <input type="radio" id="empl4" name="empl" class="custom-radio">
+            <label class="radio-label" for="empl4">Стажировка</label>
+        </div>
+        <div class="form-group">
+            <label for="city" class="label-normal">Город</label>
+            <select id="city">
+                <option>Москва</option>
+                <option>Санкт-Петербург</option>
+                <option>Красноярск</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="desc" class="label-normal">Описание</label>
+            <input type="text" id="desc" class="form-control" placeholder="Описание вакансии" required>
+        </div>
+    </div>
+    <div class="subsection">
+        <div class="title-edit">
+            <h3>Подробности</h3>
+        </div>
+        <div class="form-group">
+            <label for="req1" class="label-normal">Требования</label>
+            <input type="text" id="req1" class="form-control" placeholder="Описание требований" required>
+        </div>
+        <div class="form-group">
+            <label for="inst" class="label-normal">Образование и опыт</label>
+            <input type="text" id="inst" class="form-control" placeholder="Опишите образование и опыт" required>
+        </div>
+        <div class="form-group">
+            <label for="req2" class="label-normal">Другие требования</label>
+            <input type="text" id="req2" class="form-control" placeholder="Описание требований" required>
+        </div>
+        <div class="form-group">
+            <label for="function" class="label-normal">Функция</label>
+            <select id="function">
+                <option>Внутрикорпоративный юрист</option>
+                <option>Юридическая фирма</option>
+                <option>Адвокат</option>
+                <option>Бэк-офис юр. функции</option>
+                <option>Другое</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="level" class="label-normal">Уровень</label>
+            <select id="level">
+                <option>Юрист высшего звена</option>
+                <option>Юрист высшего звена</option>
+                <option>Юрист высшего звена</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exp" class="label-normal">Опыт работы</label>
+            <select id="exp">
+                <option>Менее 3х лет</option>
+                <option>3 - 6 лет</option>
+                <option>Более 6и лет</option>
+            </select>
+        </div>
+        <div class="label-normal">Специализация</div>
+        <div class="labels">
+            <div class="label">Compliance<a href="#" class="label-delete"></a></div>
+            <div class="label">Арбитраж<a href="#" class="label-delete"></a></div>
+        </div>
+        <div class="label-normal">Индустрия</div>
+        <div class="labels">
+            <div class="label">Автомобильный бизнес<a href="#" class="label-delete"></a></div>
+        </div>
+    </div>
+    <div class="subsection">
+        <h3>Тарифы размещения</h3>
+        <div class="label-normal">Размещение</div>
+        <div class="form-group form-check">
+            <input type="radio" id="tariff1" name="tariff" class="custom-radio">
+            <label class="radio-label" for="tariff1">Бесплатно размещение<span>0 руб.</span></label>
+        </div>
+        <div class="form-group form-check">
+            <input type="radio" id="tariff2" name="tariff" class="custom-radio">
+            <label class="radio-label" for="tariff2">Выделенное объявление в ленте<span>100 руб.</span></label>
+            <div class="form-text"></div>
+        </div>
+        <div class="form-group form-check">
+            <input type="radio" id="tariff3" name="tariff" class="custom-radio">
+            <label class="radio-label" for="tariff3">В топе на 7 дней<span>1000 руб.</span></label>
+        </div>
+        <div class="form-group form-check">
+            <input class="custom-check" type="checkbox" id="check" required>
+            <label class="custom-check-label label-small" for="check">Я согласен с
+                <a href="#" class="login-link">правилами сайта</a> и
+                <a href="#" class="login-link">политикой конфиденциальности</a>
+            </label>
+        </div>
+        <button type="submit" class="btn btn-filled">опубликовать вакансию</button>
+    </div>
+</form>

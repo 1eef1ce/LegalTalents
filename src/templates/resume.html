@@ -1,0 +1,129 @@
+<form class="needs-validation" novalidate>
+    <div class="subsection">
+        <h3>Создать резюме</h3>
+        <div class="form-group">
+            <label for="shortDesc" class="label-normal">Информация о вас</label>
+            <input type="text" id="shortDesc" class="form-control" placeholder="Напишите коротко о себе" required>
+        </div>
+        <div class="video-upload">
+            <input type="file" id="video" class="file-custom">
+            <label for="video" class="file-label video-label">Добавить видео</label>
+        </div>
+    </div>
+    <div class="subsection">
+        <div class="title-edit">
+            <h3>Подробности</h3>
+            <a href="#" class="profile-edit"></a>
+        </div>
+        <div class="form-group">
+            <label for="function" class="label-normal">Функция</label>
+            <select id="function">
+                <option>Внутрикорпоративный юрист</option>
+                <option>Юридическая фирма</option>
+                <option>Адвокат</option>
+                <option>Бэк-офис юр. функции</option>
+                <option>Другое</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="level" class="label-normal">Уровень</label>
+            <select id="level">
+                <option>Юрист высшего звена</option>
+                <option>Юрист высшего звена</option>
+                <option>Юрист высшего звена</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exp" class="label-normal">Опыт работы</label>
+            <select id="exp">
+                <option>Менее 3х лет</option>
+                <option>3 - 6 лет</option>
+                <option>Более 6и лет</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="reward" class="label-normal">Зарплата</label>
+            <input type="text" id="reward" class="form-control" placeholder="Зарплата" required>
+        </div>
+    </div>
+    <div class="subsection">
+        <h3>Образование</h3>
+        <div class="form-group">
+            <label for="spec" class="label-normal">Специальность</label>
+            <input type="text" id="spec" class="form-control" placeholder="Название специальности" required>
+        </div>
+        <div class="form-group">
+            <label for="inst" class="label-normal">Учебное заведение</label>
+            <input type="text" id="inst" class="form-control" placeholder="Название" required>
+        </div>
+        <div class="form-group">
+            <label for="ed_start" class="label-normal">Начало обучения</label>
+            <select id="ed_start">
+                <option>Выберите год</option>
+                <option>2000</option>
+                <option>2001</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="ed_finish" class="label-normal">Конец обучения</label>
+            <select id="ed_finish">
+                <option>Выберите год</option>
+                <option>2005</option>
+                <option>2006</option>
+            </select>
+        </div>
+        <div class="form-add">+ Добавить образование</div>
+    </div>
+    <div class="subsection">
+        <h3>Опыт работы</h3>
+        <div class="form-group">
+            <label for="pos" class="label-normal">Должность</label>
+            <input type="text" id="pos" class="form-control" placeholder="Название должности" required>
+        </div>
+        <div class="form-group">
+            <label for="company" class="label-normal">Компания</label>
+            <input type="text" id="company" class="form-control" placeholder="Название компании" required>
+        </div>
+        <div class="form-group">
+            <label for="work_start" class="label-normal">Начало работы</label>
+            <select id="work_start">
+                <option>Выберите год</option>
+                <option>2000</option>
+                <option>2001</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="work_finish" class="label-normal">Конец работы</label>
+            <select id="work_finish">
+                <option>Выберите год</option>
+                <option>2005</option>
+                <option>2006</option>
+            </select>
+        </div>
+        <div class="form-add">+ Добавить место работы</div>
+    </div>
+    <div class="subsection">
+        <h3>Дополнительно</h3>
+        <div class="label-normal">Языки</div>
+        <div class="labels">
+            <div class="label">Русский<a href="#" class="label-delete"></a></div>
+        </div>
+        <div class="label-normal">Специализация</div>
+        <div class="labels">
+            <div class="label">Compliance<a href="#" class="label-delete"></a></div>
+            <div class="label">Арбитраж<a href="#" class="label-delete"></a></div>
+        </div>
+        <div class="label-normal">Индустрия</div>
+        <div class="labels">
+            <div class="label">Автомобильный бизнес<a href="#" class="label-delete"></a></div>
+        </div>
+        <div class="form-group form-check">
+            <input class="custom-check" type="checkbox" id="check" required>
+            <label class="custom-check-label label-small" for="check">Я согласен с
+                <a href="#" class="login-link">правилами сайта</a> и
+                <a href="#" class="login-link">политикой конфиденциальности</a>
+            </label>
+        </div>
+        <button type="submit" class="btn btn-filled">опубликовать резюме</button>
+    </div>
+</form>

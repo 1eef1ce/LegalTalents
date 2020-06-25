@@ -1,0 +1,25 @@
+//= templates/header.html
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-xl-3">
+                //= templates/candidate-profile-nav.html
+            </div>
+            <div class="col-12 col-xl-9">
+                //= templates/profile-statistics.html
+                <div class="row">
+                    <div class="col-12">
+                        <div class="text-regular">
+                            Ваш профиль просмотрели 33 раза на прошлой неделе. (<span class="text-green">+32%</span> по сравнению с предыдущей)
+                        </div>
+                        <div class="stat-graph"><img src="assets/images/graph.png"></div>
+                    </div>
+                    <div class="col-12">
+                        //= templates/profile-actions.html
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+//= templates/footer.html
