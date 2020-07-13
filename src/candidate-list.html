@@ -2,9 +2,21 @@
 //= templates/breadcrumbs.html
 <section>
     <div class="container">
-        <h1>~ 100 500 резюме</h1>
         <div class="row">
-            <div class="col-12 col-xl-3">
+            <div class="col-12">
+                <div class="search-wrapper">
+                    <h1 class="h1-smaller">~ 100 500 резюме</h1>
+                    //= templates/search.html
+                    <a href="#filter" class="btn btn-filled btn-filter" type="button" data-toggle="modal" data-target="#filter">
+                        <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.9566 1.22627C14.8816 1.08812 14.7213 1 14.5454 1H0.454644C0.278677 1 0.11853 1.08812 0.0434272 1.22627C-0.0316151 1.36443 -0.00809621 1.52773 0.103861 1.64557L5.52054 7.34762V12.6054C5.52054 12.742 5.60183 12.8687 5.73543 12.9407C5.80865 12.9801 5.89176 13 5.97516 13C6.04408 13 6.11325 12.9864 6.17701 12.959L9.22041 11.6498C9.37504 11.5833 9.47287 11.4465 9.47311 11.2968L9.47905 7.34778L14.896 1.64552C15.0081 1.52773 15.0316 1.36437 14.9566 1.22627ZM8.67396 6.95489C8.60698 7.02538 8.57024 7.11393 8.57012 7.20536L8.5643 11.0513L6.42984 11.9695V7.20589C6.42984 7.11429 6.39317 7.02554 6.32601 6.95489L1.41868 1.78909H13.5813L8.67396 6.95489Z" fill="white"/>
+                        </svg>
+                        фильтры поиска</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-xl-3 filters">
                 //= templates/search-filters.html
             </div>
             <div class="col-12 col-xl-9">
@@ -13,4 +25,15 @@
         </div>
     </div>
 </section>
+<!--Modal-->
+<div class="modal fade" id="filter" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            <div class="container">
+                //= templates/search-filters.html
+            </div>
+        </div>
+    </div>
+</div>
 //= templates/footer.html

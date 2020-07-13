@@ -1,25 +1,47 @@
 //= templates/header.html
+//= templates/breadcrumbs.html
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-xl-3">
+            <div class="col-12 col-lg-3">
                 //= templates/candidate-profile-nav.html
             </div>
-            <div class="col-12 col-xl-9">
-                //= templates/profile-statistics.html
-                <div class="row">
-                    <div class="col-12">
-                        <div class="text-regular">
-                            Ваш профиль просмотрели 33 раза на прошлой неделе. (<span class="text-green">+32%</span> по сравнению с предыдущей)
+            <div class="col-12 col-lg-9">
+                <div class="subsection">
+                    <h2 class="h2-smaller">Статистика профиля</h2>
+                    <div class="row row-cols-1 row-cols-xl-3">
+                        <div class="col">
+                            <div class="tile stat">
+                                <div class="stat-number text-red">~ 128 ~</div>
+                                <div class="text-regular">Вакансий всего вы&nbsp;просмотрели</div>
+                            </div>
                         </div>
-                        <div class="stat-graph"><img src="assets/images/graph.png"></div>
+                        <div class="col">
+                            <div class="tile stat">
+                                <div class="stat-number text-green">~ 67 ~</div>
+                                <div class="text-regular">Раз вы откликнулись на&nbsp;вакансии</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="tile stat">
+                                <div class="stat-number text-blue">~ 12 ~</div>
+                                <div class="text-regular">Вакансий вы добавили в&nbsp;избранное</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-12">
-                        //= templates/profile-actions.html
+                </div>
+                <div class="subsection">
+                    <div class="text-regular">
+                        Ваш профиль просмотрели 33 раза на прошлой неделе. (<span class="text-green">+32%</span> по сравнению с предыдущей)
                     </div>
+                    <div class="stat-graph"><img src="assets/images/graph.png"></div>
+                </div>
+                <div class="subsection">
+                    //= templates/profile-actions.html
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 //= templates/footer.html

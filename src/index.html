@@ -1,10 +1,10 @@
 //= templates/header.html
-<section>
+<section class="section-index-top">
     <div class="container">
         <div class="row">
             <div class="col-12 col-xl-6">
                 <h1><span>Первый</span> HR-портал<br>в сфере юриспруденции</h1>
-                <div class="subtitle subtitle-large">
+                <div class="subtitle subtitle-large subtitle-index-top">
                     Объединяет юристов, рекрутеров и работодателей и помогаем компаниям и кандидатам мгновенно находить друг друга!
                 </div>
             </div>
@@ -12,77 +12,158 @@
         <div class="row">
             <div class="col-12">
                 <div class="tile search">
+                    <div class="arrow-start">Начните отсюда</div>
                     <div class="switch search-switch">
                         <input class="switch-btn" type="radio" id="consultant" name="type" value="consultant" checked>
                         <label class="switch-label search-label" for="consultant">Консультант</label>
                         <input class="switch-btn" type="radio" id="inhouse" name="type" value="inhouse">
                         <label class="switch-label search-label" for="inhouse">Инхаус</label>
                     </div>
-                    <form class="form needs-validation" novalidate>
-                        <div class="form-group">
-                            <input type="text" id="search" class="form-control custom-control" placeholder="search" required>
-                            <label for="search" class="custom-label"><i class="las la-search"></i>Поиск вакансии по ключевым словам </label>
-                        </div>
-                        <button type="submit" class="btn">Показать вакансии</button>
-                    </form>
+                    <div class="search-container">
+                        <form class="form-custom">
+                            <div class="form-group custom-group">
+                                <input type="text" id="search" class="form-control custom-control custom-input" placeholder="search">
+                                <label for="search" class="custom-label"><i class="las la-search"></i>Поиск вакансии по ключевым словам </label>
+                            </div>
+                            <button type="submit" class="btn btn-filled btn-215">Показать вакансии</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+<section>
+    <div class="container">
         <div class="row">
             <div class="col-12 col-xl-6"><img class="img-promo" src="assets/images/img-placeholder.jpg"></div>
             <div class="col-12 col-xl-6"><img class="img-promo" src="assets/images/img-placeholder.jpg"></div>
         </div>
-        <h2>~ 100500 свежих вакансий ~</h2>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <h2 class="text-xl-center">~ 100500 свежих вакансий ~</h2>
         <div class="row">
             <div class="col-12">
                 //= templates/vacancy.html
-                <a href="#" class="btn">Смотреть еще 100495 вакансий</a>
-            </div>
-        </div>
-        <h2>~ Нам доверяют ~</h2>
-        <div class="swiper-partners swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="assets/images/partner1.png">
-                </div>
-            </div>
-        </div>
-        <div class="row row-cols-1 row-cols-xl-2">
-            <div class="col order-1">
-                <div class="tile reg reg-green">
-                    <div class="reg-container">
-                        <div class="reg-text text-green">Хотите опубликовать свою вакансию на LEGAL TALENT?</div>
-                        <a href="#" class="btn btn-green">Стать работодателем</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col order-2">
-                <div class="text-stat"><span>~ 5 864 ~</span><br>соискателя в поисках работы на Legal Talents</div>
-            </div>
-            <div class="col order-3 order-xl-4">
-                <div class="tile reg reg-red">
-                    <div class="reg-container">
-                        <div class="reg-text text-red">Получайте доступ ко всем вакансиям на LEGAL TALENT</div>
-                        <a href="#" class="btn btn-red">СОЗДАТЬ РЕЗЮМЕ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col order-4 order-xl-3">
-                <div class="text-stat"><span>~ 6 241 ~</span><br>лучших вакансии доступны по всему миру</div>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-xl-8 mx-auto">
-                <div class="feedback">
-                    <div class="feedback-icon"><i class="las la-quote-left"></i></div>
-                    <div class="feedback-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
+            <div class="col text-center">
+                <a href="#" class="btn btn-more">Смотреть еще 100495 вакансий</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <h2 class="text-xl-center">~ Нам доверяют ~</h2>
+        <div class="partners">
+            <div class="partners-nav">
+                <div class="partners-nav-prev"><i class="las la-angle-left"></i></div>
+                <div class="partners-nav-next"><i class="las la-angle-right"></i></div>
+            </div>
+            <div class="swiper-partners swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#" class="partner">
+                            <div class="partner-img"><img src="assets/images/partner1.png"></div>
+                            <div class="label label-partner">12 вакансий</div>
+                        </a>
                     </div>
-                    <img class="client-img" src="assets/images/thumb-client.jpg">
-                    <div class="client-name">Константин Контантинов</div>
-                    <div class="client-position">Исполнительный директор ПАО «Сбербанк»</div>
+                    <div class="swiper-slide">
+                        <a href="#" class="partner">
+                            <div class="partner-img"><img src="assets/images/partner2.png"></div>
+                            <div class="label label-partner">24 вакансии</div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="partner">
+                            <div class="partner-img"><img src="assets/images/partner3.jpg"></div>
+                            <div class="label label-partner">15 вакансий</div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="partner">
+                            <div class="partner-img"><img src="assets/images/partner4.png"></div>
+                            <div class="label label-partner">12 вакансий</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 reg-row">
+            <div class="col">
+                <div class="tile reg reg-green">
+                    <div class="reg-img-green"></div>
+                    <div class="reg-container">
+                        <div class="reg-text text-green">Хотите опубликовать свою вакансию на LEGAL TALENT?</div>
+                        <a href="#" class="btn btn-green btn-215">Стать работодателем</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="text-stat"><span>~ 5 864 ~</span><br>соискателя в поисках работы на Legal Talents</div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 reg-row">
+            <div class="col order-1 order-md-2">
+                <div class="tile reg reg-red">
+                    <div class="reg-img-red"></div>
+                    <div class="reg-container">
+                        <div class="reg-text text-red">Получайте доступ ко всем вакансиям на LEGAL TALENT</div>
+                        <a href="#" class="btn btn-red btn-215">СОЗДАТЬ РЕЗЮМЕ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col order-2 order-md-1">
+                <div class="text-stat"><span>~ 6 241 ~</span><br>лучших вакансии доступны по всему миру</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="swiper-container swiper-feedback">
+                    <div class="feedback-nav">
+                        <div class="feedback-nav-prev"><i class="las la-angle-left"></i></div>
+                        <div class="feedback-nav-next"><i class="las la-angle-right"></i></div>
+                    </div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="feedback">
+                                <div class="feedback-icon"><i class="las la-quote-left"></i></div>
+                                <div class="feedback-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat.
+                                </div>
+                                <img class="client-img" src="assets/images/thumb-client.jpg">
+                                <div class="client-name">Константин Контантинов</div>
+                                <div class="client-position">Исполнительный директор ПАО «Сбербанк»</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="feedback">
+                                <div class="feedback-icon"><i class="las la-quote-left"></i></div>
+                                <div class="feedback-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris.
+                                </div>
+                                <img class="client-img" src="assets/images/thumb-client.jpg">
+                                <div class="client-name">Константин Контантинов</div>
+                                <div class="client-position">Исполнительный директор ПАО «Сбербанк»</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -90,18 +171,25 @@
 </section>
 <section class="section-subscribe">
     <div class="container">
-        <div class="subscribe">
-            <h2>Подписаться на рассылку</h2>
-            <div class="subtitle subtitle-large">
-                Узнавайте первыми о новых вакансиях, актуальных новостях и обновлениях Legal Talents Marketplace
+        <div class="row">
+            <div class="col-12 col-xl-6">
+                <img class="subscribe-img" src="assets/images/mail.png">
             </div>
-            <form class="form needs-validation" novalidate>
-                <div class="form-group">
-                    <input type="text" id="email" class="form-control custom-control" placeholder="email" required>
-                    <label for="email" class="custom-label"><i class="las la-envelope"></i>Ваш email</label>
+            <div class="col-12 col-xl-6">
+                <div class="subscribe">
+                    <h2>Подписаться на рассылку</h2>
+                    <div class="subtitle subtitle-large">
+                        Узнавайте первыми о новых вакансиях, актуальных новостях и обновлениях Legal Talents Marketplace
+                    </div>
+                    <form class="form form-custom">
+                        <div class="form-group custom-group">
+                            <input type="text" id="email" class="form-control custom-control custom-input" placeholder="email">
+                            <label for="email" class="custom-label"><i class="las la-envelope"></i>Ваш email</label>
+                        </div>
+                        <button type="submit" class="btn btn-filled btn-215">Подписаться</button>
+                    </form>
                 </div>
-                <button type="submit" class="btn btn-filled">Подписаться</button>
-            </form>
+            </div>
         </div>
     </div>
 </section>

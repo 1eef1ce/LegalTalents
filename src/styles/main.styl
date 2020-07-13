@@ -15,7 +15,8 @@ colorOrange = #ffa132
 colorBlue = #23589e
 
 md = 768px
-xl = 1440px
+lg = 960px
+xl = 1200px
 
 @font-face
   font-family Rubik
@@ -81,6 +82,7 @@ ul
 
 //** General **//
 body
+  position relative
   font-family fontRegular, Arial, sans-serif
   font-size 14px
   color colorGrey
@@ -98,6 +100,9 @@ img
 
 section
   margin 60px 0 80px
+
+  @media (min-width xl)
+    margin 0 0 90px
 
 .list
   li
@@ -157,8 +162,14 @@ section
 .subtitle-large
 
   @media (min-width xl)
-    width 450px
     font-size 18px
+    margin-bottom 25px
+
+.subtitle-index-top
+  width 83%
+  margin-bottom 30px
+
+  @media (min-width xl)
     margin-bottom 0
 
 .text-regular
@@ -177,11 +188,11 @@ section
   font-size 16px
   line-height 1.37
   color colorBlack
-  margin-bottom 5px
+  margin 10px 0 5px
 
   @media (min-width xl)
     font-size 18px
-    margin-bottom 10px
+    margin 15px 0 10px
 
 .text-bold
   font-family fontMedium
@@ -279,13 +290,25 @@ h3
   @media (min-width xl)
     font-size 20px
 
+.h1-smaller
+
+  @media (min-width xl)
+    font-size 28px
+
+.h2-smaller
+
+  @media (min-width xl)
+    font-size 20px
+
 //** Links and buttons **//
 .btn
-  display flex
+  display inline-flex
   align-items center
   justify-content center
+  flex-shrink 0
   width 100%
   height 45px
+  padding 0
   border-radius 2px
   border 1px solid colorGreyTransparent30
   font-family fontMedium
@@ -304,7 +327,6 @@ h3
     margin-top 15px
 
   @media (min-width xl)
-    width 160px
     height 52px
     font-size 13px
     i
@@ -332,20 +354,18 @@ h3
   border-radius 2px
   border 1px solid colorGreyTransparent30
   background colorWhite
-  padding 0 20px
-  &::before
-    content ""
-    background url("../assets/images/login.svg") no-repeat center
-    width 24px
-    height 24px
-    background-size contain
+  svg
     margin-right 4px
   &:hover
   &:focus
-    color colorBlack
+    svg
+      path
+        fill colorWhite
 
   @media (min-width xl)
     display flex
+    width 114px
+    height 40px
 
 .btn-green
   color colorWhite
@@ -378,6 +398,32 @@ h3
     color colorBlack
     background transparent
 
+.btn-160
+
+  @media (min-width xl)
+    width 160px
+
+.btn-more
+
+  @media (min-width xl)
+    width 269px
+    margin-top 20px
+
+.btn-186
+
+  @media (min-width xl)
+    width 186px
+
+.btn-215
+
+  @media (min-width xl)
+    width 215px
+
+.btn-225
+
+  @media (min-width xl)
+    width 225px
+
 .link-red
   color colorRed
   &:hover
@@ -387,13 +433,29 @@ h3
 //** Header **//
 header
 .header
-  padding 7px 0
   background colorWhite
   box-shadow 0 4px 30px rgba(0, 0, 0, 0.09)
 
   @media (min-width xl)
     padding 25px 0
     box-shadow none
+
+.header-modal.active
+  position fixed
+  top 0
+  left 0
+  right 0
+  z-index 9999
+  height 100vh
+  background-color rgba(66, 66, 66, 0.59)
+
+.nav-modal
+  padding 7px 0
+  background colorWhite
+  border-radius 0 0 4px 4px
+
+  @media (min-width xl)
+    padding 0
 
 .navbar-toggler
   padding 0
@@ -423,15 +485,6 @@ header
   transform rotate(-45deg)
   top 2px
 
-.navbar-collapse
-  &.show
-    margin-top 7px
-    border-top 1px solid colorGreyTransparent30
-
-    @media (min-width xl)
-      margin-top 0
-      border-top 0
-
 .nav
   position relative
   display flex
@@ -459,24 +512,19 @@ header
   @media (min-width xl)
     width 160px
 
-.user-icon
-  background url("../assets/images/user.svg") no-repeat center
-  width 24px
-  height 24px
-  margin-right 15px
-
-  @media (min-width xl)
-    display none
-
 .header-nav
   display flex
   flex-direction column
   align-items center
-  margin 15px 0
+  padding 15px 0
+  margin-top 7px
+  border-top 1px solid colorGreyTransparent30
 
   @media (min-width xl)
     flex-direction row
+    padding 0
     margin 0 -15px
+    border-top 0
 
 .header-item
   margin 15px 0
@@ -489,11 +537,137 @@ header
   font-size 16px
   line-height 1.18
   color colorBlack
+  &:hover
+  &:focus
+    color colorBlack
+
+.user-icon
+  background url("../assets/images/user.svg") no-repeat center
+  width 24px
+  height 24px
+  margin-right 15px
+
+  @media (min-width xl)
+    display none
+
+
+.user-login
+  display flex
+  align-items center
+  img
+    width 28px
+    height 28px
+    border-radius 100%
+    margin-right 15px
+
+  @media (min-width xl)
+    img
+      width 35px
+      height 35px
+      margin-right 10px
+    &::after
+      content ""
+      background url("../assets/images/arrow-up-rounded.svg") no-repeat center
+      width 20px
+      height 20px
+      margin-left 10px
+      transform rotate(-180deg)
+      transition 0.5s
+    &[aria-expanded='true']
+      &:after
+        transform rotate(0)
+
+.login-name
+  display none
+
+  @media (min-width xl)
+    display block
+    font-family fontRegularAlt
+    font-size 16px
+    line-height 1.4
+    color colorBlack
+
+.user
+  padding 15px 15px 20px
+  background colorWhite
+  border-radius 0 0 4px 4px
+  border 0
+  border-top 1px solid colorGreyTransparent30
+  top 39px
+  left -203px
+  right -74px
+  margin 0
+  font-size inherit
+  color inherit
+  box-shadow 0 4px 60px rgba(0, 0, 0, 0.1)
+
+  @media (min-width xl)
+    top 50px
+    left auto
+    right 0
+    border-top 0
+    padding 15px 20px 20px
+    box-shadow 0 5px 69px rgba(0, 0, 0, 0.1)
+
+.user-container
+  display flex
+  margin-bottom 25px
+
+  @media (min-width xl)
+    margin-bottom 20px
+
+.user-img
+  width 60px
+  height 60px
+  border-radius 100%
+  margin-right 15px
+
+  @media (min-width xl)
+    display none
+
+.user-info
+  display flex
+  flex-direction column
+
+.user-name
+  font-family fontBold
+  font-size 18px
+  line-height 1.4
+  color colorBlack
+  margin-bottom 5px
+
+  @media (min-width xl)
+    font-size 16px
+
+.user-links
+  display flex
+  flex-direction column
+
+.user-link
+  display flex
+  align-items center
+  &+.user-link
+    margin-top 20px
+
+.user-account
+  &::before
+    content ""
+    background url("../assets/images/avatar.svg") no-repeat center
+    width 16px
+    height 16px
+    margin-right 10px
+
+.user-logout
+  &::before
+    content ""
+    background url("../assets/images/logout.svg") no-repeat center
+    width 16px
+    height 16px
+    margin-right 10px
 
 //** Footer **//
 footer
 .footer
-  background colorWhite
   padding 0 0 15px
 
   @media (min-width xl)
@@ -562,6 +736,7 @@ footer
 
   @media (min-width xl)
     justify-content flex-end
+    margin-bottom 0
 
 .link
   font-family fontRegular
@@ -587,9 +762,40 @@ footer
   @media (min-width xl)
     font-size 14px
 
-//** Login & Register **//
+//** Login & Registration **//
+.section-login
+
+  @media (min-width xl)
+    background url("../assets/images/bg-login.png") no-repeat bottom right
+    height 920px
+    padding-top 44px
+    margin 0
+    &+footer
+    &+.footer
+      position absolute
+      bottom 0
+      left 0
+      right 0
+
+.section-registration
+
+  @media (min-width xl)
+    background url("../assets/images/bg-registration.png") no-repeat bottom left
+    height 1016px
+    padding-top 44px
+    margin 0
+    &+footer
+    &+.footer
+      position absolute
+      bottom 0
+      left 0
+      right 0
+
 .form
   margin-top 30px
+
+  @media (min-width xl)
+    margin-top 40px
 
 .form-group
   position relative
@@ -599,18 +805,22 @@ footer
     display flex
     align-items center
 
+.form-group-mb-large
+
+  @media (min-width xl)
+    margin-bottom 50px
+
 .form-control
   font-family fontRegular
   font-size 16px
   color colorBlack
   background transparent
-  height auto
+  height 35px
   padding 0
   display block
   border none
   border-bottom 1px solid colorGreyTransparent50
   border-radius 0
-  padding-bottom 5px
   &:focus
     color colorBlack
     background transparent
@@ -618,6 +828,9 @@ footer
   &::placeholder
     font-size 15px
     color colorGreyTransparent50
+
+  @media (min-width xl)
+    height 45px
 
 .custom-control
   &::placeholder
@@ -649,7 +862,7 @@ label
   font-size 13px
   position absolute
   pointer-events none
-  top 0
+  top calc(50% - 0.5em)
   transition 0.2s ease all
   i
     font-size 16px
@@ -764,6 +977,13 @@ label
     font-family fontMedium
     margin-top 5px
 
+  @media (min-width xl)
+    padding-left 35px
+    &:before
+    &:after
+      width 20px
+      height 20px
+
 .custom-radio
   &:checked
     &~.radio-label
@@ -772,6 +992,9 @@ label
       &:after
         background-color colorWhite
         border 5px solid colorGreen
+
+        @media (min-width xl)
+          border-width 6px
 
 .custom-radio:not(:disabled):active~.radio-label::before
   background-color #e8ecef
@@ -792,7 +1015,7 @@ label
   align-items center
   justify-content space-between
   width 100%
-  height 30px
+  height 35px
   font-family fontRegular
   font-size 15px
   color colorGreyTransparent50
@@ -807,6 +1030,9 @@ label
   &.active
     &::after
       transform rotate(180deg)
+
+  @media (min-width xl)
+    height 45px
 
 .select-options
   display none
@@ -911,11 +1137,14 @@ label
 
 .switch
   display flex
-  height 45px
+  height 47px
   background colorWhite
   border 1px solid colorGreyTransparent30
   border-radius 2px
   transition all 0.1s ease
+
+  @media (min-width xl)
+    height 48px
 
 .switch-btn
   display none
@@ -946,13 +1175,94 @@ label
       color colorWhite
       background-color colorBlack
 
-//** Seacrh **//
+.tagsinput
+  display flex
+  align-items center
+  flex-wrap wrap
+  font-family fontRegular
+  font-size 16px
+  color colorBlack
+  background transparent
+  width 100%
+  padding 0
+  padding-bottom 10px
+  border none
+  border-bottom 1px solid colorGreyTransparent50
+  border-radius 0
+  .label
+    margin 0 10px 0 0
+  &:focus
+    color colorBlack
+    background transparent
+    border-color colorBlack
+  &::placeholder
+    font-size 15px
+    color colorGreyTransparent50
+  div
+    flex-grow 1
+
+.tag-input
+  display block
+  width 100%
+  border 0
+  color colorGrey
+
+.group-normal
+
+  @media (min-width xl)
+    align-items normal
+
+.radio-group
+
+  @media (min-width xl)
+    .form-check
+      margin-bottom 0
+      &+.form-check
+        margin-left 30px
+
+.tariff-label
+
+  @media (min-width xl)
+    display flex
+    justify-content space-between
+    width 100%
+    span
+      width 45%
+      margin 0
+
+//** Search **//
+.arrow-start
+  display none
+
+  @media (min-width xl)
+    display block
+    position absolute
+    bottom 45%
+    left -120px
+    background url("../assets/images/arrow-curved.svg") no-repeat bottom center
+    width 138px
+    height 166px
+    font-family fontItalic
+    font-size 15px
+    color colorGreen
+
 .search
   padding 20px 15px 15px
   margin-bottom 30px
 
+  @media (min-width xl)
+    flex-direction row
+    align-items flex-end
+    justify-content space-between
+    padding 46px 40px
+    margin 160px 0 0
+
 .search-switch
   border 1px solid #d4d3d4
+
+  @media (min-width xl)
+    width 30%
+    height 50px
 
 .search-label
   &:first-of-type
@@ -964,15 +1274,37 @@ label
       color colorBlack
       background-color rgba(51, 51, 51, 0.1)
 
+.search-container
+
+  @media (min-width xl)
+    width 67%
+
+.form-custom
+  display flex
+  flex-direction column
+  margin-top 30px
+
+  @media (min-width xl)
+    flex-direction row
+    align-items flex-end
+    margin-top 0
+
 .search-form
   display flex
   align-items center
   margin-bottom 30px
 
   @media (min-width xl)
+    width 445px
     margin-bottom 0
 
-.search-input
+.custom-group
+
+  @media (min-width xl)
+    flex-grow 1
+    margin-bottom 0
+
+.custom-input
   height 35px
   margin-right 10px
   padding-bottom 0
@@ -1001,12 +1333,21 @@ label
     background-size 22px
 
 .btn-filter
-  &::before
-    content ""
-    background url("../assets/images/filter.svg") no-repeat center
-    width 15px
-    height 14px
+  svg
     margin-right 10px
+  &:hover
+  &:focus
+    svg
+      path
+        fill colorBlack
+
+  @media (min-width xl)
+    display none
+
+.btn-filter-submit
+
+  @media (min-width xl)
+    display none
 
 //** Modal **//
 .close:not(:disabled):not(.disabled):focus
@@ -1035,6 +1376,12 @@ label
   padding 50px 0 30px
 
 //** Filter **//
+.filters
+  display none
+
+  @media (min-width xl)
+    display block
+
 .filter-top
   display flex
   align-items center
@@ -1169,15 +1516,89 @@ label
   background none
   border-radius 0
 
-//** Reg **//
-.reg
+//** Top **//
+.section-index-top
+  background url("../assets/images/bg-top-mobile.png") no-repeat top right
+
+  @media (min-width xl)
+    background url("../assets/images/bg-top.png") no-repeat top right
+    height 672px
+    padding-top 110px
+    margin 0 0 45px
+
+//** Partners **//
+.partners
+  position relative
+
+.partner
   display flex
+  flex-direction column
+  align-items center
+  cursor pointer
+  &:hover
+  &:focus
+    img
+      filter grayscale(0)
+      opacity 1
+
+.partner-img
+  display flex
+  align-items center
+  justify-content center
+  width 200px
+  height 50px
+  margin-bottom 15px
+  img
+    filter grayscale(1)
+    opacity 0.4
+
+  @media (min-width xl)
+    height 70px
+    margin-bottom 20px
+
+.partners-nav-next,
+.partners-nav-prev
+  position absolute
+  top 13px
+  z-index 10
+  width 1em
+  font-size 24px
+  color colorGrey
+  opacity 0.2
+  &:focus
+    outline none
+
+  @media (min-width xl)
+    font-size 48px
+
+.partners-nav-prev
+  left 0
+
+  @media (min-width xl)
+    left -1em
+
+.partners-nav-next
+  right 0
+
+  @media (min-width xl)
+    right -1em
+
+//** Reg **//
+.reg-row
+  align-items center
+  margin-bottom 80px
+
+  @media (min-width xl)
+    margin-bottom 110px
+
+.reg
   height 162px
   margin-bottom 20px
 
   @media (min-width xl)
     height 200px
-    margin-bottom 110px
+    padding 30px
+    margin-bottom 0
 
 .reg-container
   width 181px
@@ -1187,11 +1608,42 @@ label
 
 .reg-green
   align-items flex-start
-  background url("../assets/images/bg-green-right.png") no-repeat right
+
+  @media (min-width xl)
+    align-items flex-end
 
 .reg-red
   align-items flex-end
+
+.reg-img-green
+  position absolute
+  bottom 0
+  right -6px
+  background url("../assets/images/bg-green-right.png") no-repeat right
+  width 93px
+  height 153px
+
+  @media (min-width xl)
+    right auto
+    left 14px
+    background url("../assets/images/bg-green-left.png") no-repeat left
+    width 164px
+    height 218px
+
+.reg-img-red
+  position absolute
+  bottom 14px
+  left 0
   background url("../assets/images/bg-red-left.png") no-repeat left
+  width 68px
+  height 157px
+
+  @media (min-width xl)
+    bottom 6px
+    left 40px
+    background url("../assets/images/bg-red-right.png") no-repeat left
+    width 106px
+    height 246px
 
 .reg-text
   font-family fontBold
@@ -1201,7 +1653,7 @@ label
 
   @media (min-width xl)
     font-size 20px
-    margin-bottom 30px
+    margin-bottom 20px
 
 .text-stat
   font-family fontBold
@@ -1209,24 +1661,44 @@ label
   line-height 1.4
   color colorBlack
   text-align center
-  margin-bottom 80px
+  margin-bottom 0
   span
     font-size 36px
 
   @media (min-width xl)
     font-size 24px
-    margin-bottom 0
     span
       font-size 48px
 
 //** Feedback **//
+.feedback-nav-next,
+.feedback-nav-prev
+  position absolute
+  top 30%
+  z-index 10
+  width 1em
+  font-size 24px
+  color colorGrey
+  opacity 0.2
+  &:focus
+    outline none
+
+  @media (min-width xl)
+    font-size 48px
+
+.feedback-nav-prev
+  left 0
+
+.feedback-nav-next
+  right 0
+
 .feedback
   max-width 85%
   margin 0 auto
   text-align center
 
   @media (min-width xl)
-    max-width none
+    max-width 760px
 
 .feedback-icon
   font-size 38px
@@ -1276,21 +1748,54 @@ label
 .section-subscribe
   margin-top 0
   background url("../assets/images/bg-bottom-mobile.png") no-repeat top
+  background-size cover
+
+  @media (min-width xl)
+    background url("../assets/images/bg-bottom.png") no-repeat top
+    background-size cover
+    height 582px
+    margin-bottom 0
+    &+footer
+    &+.footer
+      position absolute
+      bottom 0
+      left 0
+      right 0
+
+.subscribe-img
+  margin 12px 0 40px
+
+  @media (min-width xl)
+    margin 58px 0 0
 
 .subscribe
-  padding-top 193px
-  background url("../assets/images/mail.png") no-repeat top 12px center
-  background-size contain
+
+  @media (min-width xl)
+    margin-top 134px
 
 //** Vacancy **//
+.vacancy
+
+  @media (min-width xl)
+    flex-direction row
+    .btn
+      margin 37px 0 0 auto
+
 .vacancy-container
   margin-bottom 15px
 
   @media (min-width xl)
-    display flex
-    flex-direction row
-    align-items center
     margin-bottom 0
+    margin-right 3%
+    max-width 55%
+
+.vacancy-editable-container
+  margin-bottom 0
+
+.vacancy-employer-container
+
+  @media (min-width xl)
+    max-width 630px
 
 .container-top
 
@@ -1299,15 +1804,37 @@ label
     border-bottom 1px solid #ebebeb
     margin-bottom 30px
 
-.vacancy-wrapper
+.job-container
+  display flex
+  flex-direction column
+
+  @media (min-width xl)
+    flex-direction row
+    align-items center
+
+.job-wrapper
   margin-bottom 15px
 
   @media (min-width xl)
+    flex-grow 1
     margin-bottom 0
-    margin-right 30px
+    margin-right 28px
+
+.job-title
+  font-family fontBold
+  font-size 20px
+  line-height 1.4
+  color colorBlack
+  margin-bottom 15px
+
+  @media (min-width xl)
+    font-size 28px
 
 .vacancy-editable
   padding-top 20px
+
+  @media (min-width xl)
+    padding-top 40px
 
 .vacancy-logo
   display none
@@ -1317,10 +1844,16 @@ label
     align-items center
     justify-content center
     flex-shrink 0
-    width 120px
-    height 120px
+    width 110px
+    height 110px
     border 1px solid #e0e0e0
     margin-right 20px
+
+.vacancy-logo-large
+
+  @media (min-width xl)
+    width 120px
+    height 120px
 
 .vacancy-like
   position absolute
@@ -1374,6 +1907,10 @@ label
   top 15px
   right 15px
 
+  @media (min-width xl)
+    top calc(50% - 16px)
+    right 40px
+
 .company-edit
   bottom 15px
   right 15px
@@ -1389,6 +1926,7 @@ label
   @media (min-width xl)
     flex-direction row
     align-items center
+    height 32px
     margin-bottom 5px
 
 .date
@@ -1400,18 +1938,19 @@ label
   i
     font-size 14px
     margin-right 7px
+  &.job-date
+    margin-bottom 10px
 
   @media (min-width xl)
     font-size 14px
     margin-bottom 0
     i
       font-size 18px
+    &.job-date
+      margin-bottom 0
 
 .labels
-  margin -5px -5px 30px
-
-  @media (min-width xl)
-    margin -5px -5px 40px
+  margin -5px
 
 .label
   display inline-flex
@@ -1425,6 +1964,9 @@ label
   font-size 12px
   color colorGreen
   margin 5px
+  &:hover
+  &:focus
+    color colorGreen
 
   @media (min-width xl)
     padding 11px 10px
@@ -1436,6 +1978,11 @@ label
 
   @media (min-width xl)
     margin 0 0 0 20px
+
+.label-partner
+  align-self auto
+  padding 10px 15px
+  margin 0
 
 .label-delete
   background url("../assets/images/close-green.svg") no-repeat center
@@ -1449,6 +1996,11 @@ label
   line-height 1.4
   color colorBlack
   margin-bottom 15px
+
+  @media (min-width xl)
+    font-size 18px
+
+.vacancy-title-large
 
   @media (min-width xl)
     font-size 20px
@@ -1519,6 +2071,17 @@ label
     box-shadow 0 0 10px rgba(0, 0, 0, 0.1)
     margin-bottom 40px
 
+.summary-edit
+  background #fafafa
+  border-radius 2px
+  padding 15px 20px
+  margin-bottom 0
+
+  @media (min-width xl)
+    padding 20px 20px 30px
+    box-shadow 0 0 10px rgba(0, 0, 0, 0.1)
+    margin-bottom 40px
+
 .summary-top
   font-family fontRegularAlt
   font-size 16px
@@ -1532,6 +2095,33 @@ label
     font-size 18px
     padding-bottom 20px
     margin-bottom 20px
+
+.summary-top-edit
+  font-family fontBold
+  .title-edit
+    margin-bottom 0
+
+  @media (min-width xl)
+    font-size 20px
+    margin-bottom 15px
+
+.summary-container
+  display flex
+  flex-direction column
+
+  @media (min-width xl)
+    flex-direction row
+
+.summary-wrapper
+  display flex
+  flex-direction column
+  &+.summary-wrapper
+    margin-top 20px
+
+  @media (min-width xl)
+    width 50%
+    &+.summary-wrapper
+      margin-top 0
 
 .summary-block
   &+.summary-block
@@ -1561,6 +2151,8 @@ label
 
 .subsection
   margin-bottom 60px
+  &:last-of-type
+    margin-bottom 0
 
   @media (min-width xl)
     margin-bottom 40px
@@ -1597,29 +2189,47 @@ label
 .candidate
   display flex
   flex-direction column
-  align-items center
 
   @media (min-width xl)
     flex-direction row
+    align-items center
     justify-content space-between
 
 .candidate-container
   display flex
-  flex-direction column
   margin-bottom 15px
 
   @media (min-width xl)
     flex-direction row
     align-items center
     justify-content space-between
-    margin-bottom 30px
+    margin-bottom 0
+
+.candidate-details
+  display flex
+  flex-direction column
+
+  @media (min-width xl)
+    flex-direction row
+    align-items center
+    justify-content space-between
 
 .candidate-wrapper
+  display flex
+  flex-direction column
+  justify-content space-between
+
+.candidate-details-wrapper
   display flex
   margin-bottom 15px
 
   @media (min-width xl)
     margin-bottom 0
+
+.candidate-details-body
+  display flex
+  flex-direction column
+  justify-content space-between
 
 .candidate-img
   width 70px
@@ -1675,7 +2285,7 @@ label
     display flex
     align-items center
     justify-content space-between
-    margin-bottom 8px
+    margin 30px 0 8px
 
 .test-heading
   font-family fontRegular
@@ -1684,12 +2294,6 @@ label
   color colorGrey
   &:last-of-type
     width 54%
-
-.tests
-  margin-bottom 30px
-
-  @media (min-width xl)
-    margin-bottom 40px
 
 .test
   display flex
@@ -1770,8 +2374,12 @@ label
   margin-bottom 30px
 
   @media (min-width xl)
+    display flex
     align-items center
+    justify-content space-between
     margin-bottom 40px
+    h1
+      margin-bottom 0
 
 .references
   font-family fontRegular
@@ -1781,8 +2389,14 @@ label
   letter-spacing 0.2em
   text-align justify
   color colorBlack
+  a
+    &:hover
+    &:focus
+      color colorRed
+      border-bottom 1px solid colorRed
 
   @media (min-width xl)
+    line-height 1.5
     letter-spacing 0.1em
 
 .employers
@@ -1793,6 +2407,16 @@ label
   li
     &+.employers-letter
       margin-top 30px
+  a
+    &:hover
+    &:focus
+      color colorRed
+
+  @media (min-width 576px)
+    columns 2
+
+  @media (min-width lg)
+    columns 3
 
   @media (min-width xl)
     columns 4
@@ -1806,26 +2430,35 @@ label
 
 //** Employer **//
 .employer
-  padding-bottom 20px
+  flex-direction row
+  padding-bottom 48px
 
   @media (min-width xl)
+    align-items center
     padding-bottom 40px
 
 .employer-container
   display flex
   flex-direction column
 
-.employer-details-container
+  @media (min-width xl)
+    margin-right 5%
+
+.employer-details
   display flex
   flex-direction column
-  margin-bottom 15px
-
-.employer-wrapper
-  display flex
-  margin-bottom 10px
 
   @media (min-width xl)
-    align-items center
+    flex-direction row
+
+.employer-details-wrapper
+  position relative
+  display flex
+  padding-bottom 42px
+
+  @media (min-width xl)
+    margin-right 5%
+    padding-bottom 0
 
 .employer-logo
   display flex
@@ -1838,8 +2471,8 @@ label
   margin-right 15px
 
   @media (min-width xl)
-    width 120px
-    height 120px
+    width 110px
+    height 110px
     margin-right 20px
 
 .employer-details-logo
@@ -1852,6 +2485,11 @@ label
   border 1px solid #e0e0e0
   margin-right 15px
 
+  @media (min-width xl)
+    width 120px
+    height 120px
+    margin-right 20px
+
 .employer-name
   font-family fontRegularAlt
   font-size 16px
@@ -1860,6 +2498,7 @@ label
 
   @media (min-width xl)
     font-size 20px
+    margin-bottom 15px
 
 .employer-details-name
   font-family fontBold
@@ -1869,6 +2508,27 @@ label
 
   @media (min-width xl)
     font-size 28px
+    margin-bottom 20px
+
+.employer-tags
+  position absolute
+  bottom 20px
+  left 15px
+
+  @media (min-width xl)
+    position relative
+    bottom auto
+    left auto
+
+.employer-details-tags
+  position absolute
+  bottom 15px
+  left 0
+
+  @media (min-width xl)
+    position relative
+    bottom auto
+    left auto
 
 //** Services **//
 .service
@@ -2020,6 +2680,40 @@ label
   @media (min-width xl)
     margin-bottom 30px
 
+.profile-fill
+  margin-bottom 20px
+
+  @media (min-width xl)
+    margin-bottom 30px
+
+.fill-status
+  display flex
+  align-items center
+  justify-content space-between
+  font-family fontRegular
+  font-size 14px
+  line-height 1.5
+  color colorBlack
+  margin-bottom 5px
+
+  @media (min-width xl)
+    font-size 16px
+
+.fill-bar
+  position relative
+  height 6px
+  background #f2f4f6
+  border-radius 1px
+
+.fill-progress
+  position absolute
+  top 0
+  left 0
+  right 30%
+  height 6px
+  background colorGreen
+  border-radius 1px
+
 .profile-img
   width 60px
   height 60px
@@ -2037,10 +2731,12 @@ label
   color colorBlack
 
 .profile-links
+  display none
   padding 1px 20px 8px
   background colorWhite
   border-radius 2px
   box-shadow 0 2px 30px rgba(0, 0, 0, 0.1)
+  margin-bottom 60px
   li
     &.active
       a
@@ -2049,30 +2745,88 @@ label
           path
             fill colorGreen
 
-  @media (min-width xl)
+  @media (min-width lg)
+    display block
     padding 0
     box-shadow none
+    margin-bottom 0
+    li
+      &:last-of-type
+        margin-top 15px
+        border-top 1px solid #ebebeb
+        padding-top 15px
 
 .profile-link
   display flex
-  padding 5px 0
-  margin 7px 0
+  margin 25px 0
   font-family fontRegular
   font-size 16px
   line-height 1.18
   color colorBlack
+  &:hover
+  &:focus
+    color colorGreen
+    svg
+      path
+        fill colorGreen
   svg
     width 16px
     height 16px
     margin-right 10px
 
   @media (min-width xl)
-    margin 10px 0
+    margin 30px 0
     font-size 18px
     svg
       width 18px
       height 18px
       margin-right 15px
+
+.profile-dropdown-links
+  margin-bottom 60px
+
+  @media (min-width lg)
+    display none
+
+.dropdown-links
+  top 0
+  z-index 100
+  width 100%
+  margin 0
+  border 0
+  padding 45px 20px 0
+  border-radius 0 0 2px 2px
+  background colorWhite
+  box-shadow 0 2px 30px rgba(0, 0, 0, 0.1)
+  margin-bottom 60px
+  li
+    &:first-of-type
+      border-top 1px solid colorGreyTransparent30
+    &.active
+      a
+        color colorGreen
+        svg
+          path
+            fill colorGreen
+
+.dropdown-link
+  position relative
+  z-index 1000
+  align-items center
+  height 45px
+  padding 10px 20px
+  border-radius 2px
+  box-shadow 0 2px 30px rgba(0, 0, 0, 0.1)
+  &::after
+    content ""
+    background url("../assets/images/arrow-down.svg") no-repeat center
+    width 12px
+    height 8px
+    margin-left auto
+  &[aria-expanded='true']
+    border-radius 2px 2px 0 0
+    &::after
+      transform rotate(180deg)
 
 .avatar-upload
   position relative
@@ -2175,4 +2929,78 @@ label
   @media (min-width xl)
     margin-left 15px
 
+.profile-actions
+  margin-top 30px
 
+  @media (min-width xl)
+    margin-top 40px
+    margin-left 160px
+
+//** Editor **//
+.trumbowyg-box
+.trumbowyg-editor
+  border 0
+  border-bottom 0
+  min-height auto
+  margin 0
+  overflow auto
+
+.trumbowyg-editor
+  font-size 16px
+  line-height 1.4
+  color colorBlack
+  border-bottom 1px solid colorGreyTransparent50
+  p
+    margin-bottom 0
+
+.trumbowyg-button-pane
+  display flex
+  justify-content space-between
+  max-width 365px
+  min-height 30px
+  border 1px solid #d7e0e2
+  border-radius 3px
+  margin 0
+  padding 0
+
+  @media (min-width lg)
+    min-height 36px
+
+.trumbowyg-button-pane .trumbowyg-button-group
+  display contents
+
+.trumbowyg-button-pane .trumbowyg-button-group::after
+  height 30px
+  margin 0
+
+  @media (min-width lg)
+    height 36px
+
+.trumbowyg-button-pane::after
+  content none
+
+.trumbowyg-button-pane button
+  width 28px
+  height 30px
+  padding 0!important
+  margin-bottom 0
+
+  @media (min-width lg)
+    width 36px
+    height 36px
+
+.trumbowyg-editor, .trumbowyg-textarea
+  padding 20px 0 15px
+  min-height auto
+
+  @media (min-width lg)
+    padding 15px 0
+
+.trumbowyg-editor[contenteditable=true]:empty:not(:focus)::before
+  font-size 15px
+  color colorGreyTransparent50
+
+.trumbowyg-box svg, .trumbowyg-modal svg
+
+  @media (min-width lg)
+    width 20px

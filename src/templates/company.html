@@ -1,0 +1,64 @@
+<div class="avatar-upload">
+    <div class="avatar-edit">
+        <input type="file" id="imageUpload" class="file-custom" accept=".png, .jpg, .jpeg">
+        <label for="imageUpload" class="file-label">Изменить аватар</label>
+    </div>
+    <div class="avatar-preview">
+        <div id="imagePreview"></div>
+    </div>
+</div>
+<form class="needs-validation" novalidate>
+    <div class="subsection">
+        <div class="row">
+            <div class="col-12 col-xl-7">
+                <h3>Основная информация</h3>
+                <div class="form-group">
+                    <label for="name" class="label-normal">Название</label>
+                    <input type="text" id="name" class="form-control" placeholder="Название" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="label-normal">Email</label>
+                    <input type="text" id="email" class="form-control" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="label-normal">Телефон</label>
+                    <input type="text" id="phone" class="form-control" placeholder="Телефон" required>
+                </div>
+                <div class="form-group">
+                    <label for="webpage" class="label-normal">Сайт</label>
+                    <input type="text" id="webpage" class="form-control" placeholder="Сайт" required>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="about" class="label-normal">О компании</label>
+                    <input type="text" id="about" class="form-control" placeholder="Опишите компанию" required>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="subsection">
+        <div class="row">
+            <div class="col-12 col-xl-7">
+                <h3>Социальные сети</h3>
+                <div class="form-group">
+                    <label for="facebook" class="label-normal">Facebook</label>
+                    <input type="text" id="facebook" class="form-control" placeholder="facebook.com/username">
+                </div>
+                <div class="form-group">
+                    <label for="vk" class="label-normal">VK</label>
+                    <input type="text" id="vk" class="form-control" placeholder="vk.com/username">
+                </div>
+                <div class="form-group">
+                    <label for="linkedin" class="label-normal">Linkedin</label>
+                    <input type="text" id="linkedin" class="form-control" placeholder="linkedin.com/username">
+                </div>
+                <div class="form-add">+ Добавить</div>
+                <div class="actions profile-actions">
+                    <button type="submit" class="btn btn-green btn-225">сохранить изменения</button>
+                    <a href="#" class="btn btn-transparent btn-160">Удалить компанию</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

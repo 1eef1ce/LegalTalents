@@ -6,47 +6,78 @@
 
     <link rel="stylesheet" href="assets/custom/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/custom/line-awesome-1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="assets/custom/swiper/css/swiper.min.css">
     <link rel="stylesheet" href="assets/custom/ion.rangeSlider/css/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="assets/custom/trumbowyg/dist/ui/trumbowyg.min.css">
     <link rel="stylesheet" href="css/style.css">
 
     <title></title>
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="nav navbar-expand-xl">
-                <a href="/" class="header-logo"><img src="assets/images/logo.svg"></a>
-                <nav class="navbar-collapse nav-center collapse" id="navbar">
-                    <ul class="header-nav">
-                        <li class="header-item">
-                            <a class="header-link" href="job-list.html">Вакансии</a>
-                        </li>
-                        <li class="header-item">
-                            <a class="header-link" href="candidate-list.html">Соискатели</a>
-                        </li>
-                        <li class="header-item">
-                            <a class="header-link" href="#">О портале</a>
-                        </li>
-                        <li class="header-item">
-                            <a class="header-link" href="#">Тренинги</a>
-                        </li>
-                        <li class="header-item">
-                            <a class="header-link" href="#">Рекламодателям</a>
-                        </li>
-                        <li class="header-item">
-                            <a class="header-link" href="#">Контакты</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="nav-right">
-                    <a href="#" class="user-icon"></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="login.html" class="btn btn-login">Войти</a>
+        <div class="header-modal">
+            <div class="nav-modal">
+                <div class="container">
+                    <div class="nav navbar-expand-xl">
+                        <a href="/" class="header-logo"><img src="assets/images/logo.svg"></a>
+                        <nav class="navbar-collapse nav-center collapse" id="navbar">
+                            <ul class="header-nav">
+                                <li class="header-item">
+                                    <a class="header-link" href="job-list.html">Вакансии</a>
+                                </li>
+                                <li class="header-item">
+                                    <a class="header-link" href="candidate-list.html">Соискатели</a>
+                                </li>
+                                <li class="header-item">
+                                    <a class="header-link" href="#">О портале</a>
+                                </li>
+                                <li class="header-item">
+                                    <a class="header-link" href="#">Тренинги</a>
+                                </li>
+                                <li class="header-item">
+                                    <a class="header-link" href="#">Рекламодателям</a>
+                                </li>
+                                <li class="header-item">
+                                    <a class="header-link" href="#">Контакты</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="nav-right">
+                            <div class="dropdown">
+                                <a class="user-login" href="#" role="button" id="user" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+                                    <img src="../assets/images/thumb-candidate.jpg">
+                                    <div class="login-name">Мария Н.</div>
+                                </a>
+                                <div class="dropdown-menu user" aria-labelledby="user">
+                                    <div class="user-container">
+                                        <img class="user-img" src="../assets/images/thumb-candidate.jpg">
+                                        <div class="user-info">
+                                            <div class="user-name">Мария Николаевна</div>
+                                            <div class="user-mail">marinanikol223@gmail.com</div>
+                                        </div>
+                                    </div>
+                                    <div class="user-links">
+                                        <a href="#" class="user-link user-account">Мой аккаунт</a>
+                                        <a href="#" class="user-link user-logout">Выйти из аккаунта</a>
+                                    </div>
+                                </div>
+                            </div><!-- user -->
+                            <a href="#" class="user-icon"></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!--
+                            <a href="login.html" class="btn btn-login">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6364 2.44995C14.518 2.44995 16.8682 4.80011 16.8682 7.68177C16.8682 10.5634 14.518 12.9136 11.6364 12.9136C8.75471 12.9136 6.40455 10.5634 6.40455 7.68177C6.40455 4.80011 8.75471 2.44995 11.6364 2.44995ZM11.6364 12.8136C16.1171 12.8136 19.8239 16.236 20.2353 20.6416C20.2817 21.139 19.8631 21.5384 19.3637 21.5244C18.8803 21.5108 18.5017 21.113 18.4416 20.6331C18.0176 17.2468 15.1407 14.6409 11.6364 14.6409C8.1416 14.6409 5.27081 17.2326 4.79569 20.6444C4.72682 21.139 4.31858 21.5385 3.81943 21.5244C3.33535 21.5108 2.94503 21.1133 2.99323 20.6315C3.43131 16.2522 7.14505 12.8136 11.6364 12.8136ZM11.6364 4.27722C9.74779 4.27722 8.23183 5.79319 8.23183 7.68177C8.23183 9.57035 9.74779 11.0863 11.6364 11.0863C13.525 11.0863 15.0409 9.57035 15.0409 7.68177C15.0409 5.79319 13.525 4.27722 11.6364 4.27722Z" fill="#333333"/>
+                                </svg>
+                                Войти</a><!-- login -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
+

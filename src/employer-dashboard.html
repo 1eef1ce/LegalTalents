@@ -1,13 +1,38 @@
 //= templates/header.html
+//= templates/breadcrumbs.html
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-xl-3">
+            <div class="col-12 col-lg-3">
                 //= templates/employer-profile-nav.html
             </div>
-            <div class="col-12 col-xl-9">
-                //= templates/profile-statistics.html
-                //= templates/profile-actions.html
+            <div class="col-12 col-lg-9">
+                <div class="subsection">
+                    <h2 class="h1-smaller">Статистика профиля</h2>
+                    <div class="row row-cols-1 row-cols-xl-3">
+                        <div class="col">
+                            <div class="tile stat">
+                                <div class="stat-number text-red">~ 2 ~</div>
+                                <div class="text-regular">Компании, которыми вы&nbsp;управляете</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="tile stat">
+                                <div class="stat-number text-green">~ 67 ~</div>
+                                <div class="text-regular">Вакансий опубликовано</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="tile stat">
+                                <div class="stat-number text-blue">~ 12 ~</div>
+                                <div class="text-regular">Резюме <br class="d-none d-xl-block">в&nbsp;избранном</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subsection">
+                    //= templates/profile-actions.html
+                </div>
             </div>
         </div>
     </div>
